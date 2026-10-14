@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>HR Учет сотрудников</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/imask"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Кадровый учет сотрудников</h1>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Поиск по ФИО...">
+            <input type="text" id="filterDepartment" placeholder="Фильтр по отделу">
+            <input type="text" id="filterPosition" placeholder="Фильтр по должности">
+            <button id="btnSearch">Найти</button>
+            <button id="btnAdd" class="btn-primary">Добавить сотрудника</button>
+        </div>
+
+        <table id="employeesTable">
+            <thead>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Дата рождения</th>
+                    <th>Паспорт</th>
+                    <th>Контакты</th>
+                    <th>Адрес</th>
+                    <th>Отдел</th>
+                    <th>Должность</th>
+                    <th>Зарплата</th>
+                    <th>Дата приема</th>
+                    <th>Статус</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Добавить сотрудника</h2>
+            <form id="employeeForm">
+                <input type="hidden" id="employeeId">
+                <input type="text" id="fullName" placeholder="ФИО" required>
+                <input type="date" id="birthDate" required>
+                <input type="text" id="passport" placeholder="Серия и номер паспорта" required>
+                <input type="text" id="contact" placeholder="Телефон" required>
+                <input type="text" id="address" placeholder="Адрес проживания" required>
+                <input type="text" id="department" placeholder="Отдел" required>
+                <input type="text" id="position" placeholder="Должность" required>
+                <input type="number" id="salary" placeholder="Зарплата" required>
+                <input type="date" id="hireDate" required>
+                <button type="submit" class="btn-primary">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
